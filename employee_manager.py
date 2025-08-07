@@ -7,3 +7,9 @@ class EmployeeManager:
 
     def list_employees(self):
         return self.employees
+        def remove_employee(self, employee_id):
+        for employee in self.employees:
+            if employee.id == employee_id:
+                self.employees.remove(employee)
+                return True
+        return False

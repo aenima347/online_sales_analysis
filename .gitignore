@@ -1,2 +1,9 @@
 __pycache__/
 *.pyc
+# Ignoriši config fajl sa osetljivim podacima
+config.json
+
+# Ignoriši sve slike u folderu screenshots
+screenshots/
+*.png
+*.jpg

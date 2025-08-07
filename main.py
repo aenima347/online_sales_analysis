@@ -1,20 +1,42 @@
 from product import Product
 from product_manager import ProductManager
+from user import User
+from user_manager import UserManager
+from employee import Employee
+from employee_manager import EmployeeManager
 
-# Kreiramo ProductManager
-manager = ProductManager()
+# Inicijalizacija menadžera
+product_manager = ProductManager()
+user_manager = UserManager()
+employee_manager = EmployeeManager()
 
-# Dodajemo proizvode
-p1 = Product("Laptop", 70000, 5)
-p2 = Product("Miš", 1500, 10)
-p3 = Product("Tastatura", 3500, 7)
+# Dodavanje proizvoda
+p1 = Product(1, "Laptop", 1200)
+p2 = Product(2, "Monitor", 300)
+product_manager.add_product(p1)
+product_manager.add_product(p2)
 
-manager.add_product(p1)
-manager.add_product(p2)
-manager.add_product(p3)
+# Dodavanje korisnika
+u1 = User(1, "Ana", "ana@example.com")
+u2 = User(2, "Milan", "milan@example.com")
+user_manager.add_user(u1)
+user_manager.add_user(u2)
 
-# Prikaz svih proizvoda
-manager.display_all_products()
+# Dodavanje zaposlenih
+e1 = Employee(1, "Petar", "Prodaja")
+e2 = Employee(2, "Ivana", "Podrška")
+employee_manager.add_employee(e1)
+employee_manager.add_employee(e2)
 
-# Ukupna vrednost zaliha
-manager.total_inventory_value()
+# Ispis svih podataka
+print("Proizvodi:")
+for p in product_manager.products:
+    print(f"{p.name} - {p.price} EUR")
+
+print("\nKorisnici:")
+for u in user_manager.users:
+    print(f"{u.name} - {u.email}")
+
+print("\nZaposleni:")
+for e in employee_manager.employees:
+    print(f"{e.name} - {e.position}")
